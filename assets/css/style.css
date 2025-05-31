@@ -1,0 +1,330 @@
+
+    /* إعدادات العناصر الأساسية */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* إعدادات الجسم (Body) */
+    body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        margin: 0 auto;
+        padding: 0;
+        background-color: #E3F2FD;
+        background-image: url('https://www.wmadaat.com/upload/white/white%20(1).jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    /* إعدادات الحاوية الرئيسية */
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 1000px;
+    }
+
+          
+          
+          
+    /* حاوية البحث */
+    .search-container {
+        background-color: #ffffff;
+        border-radius: 24px;
+        box-shadow: 0px 1px 6px rgba(32, 33, 36, 0.28);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 900px;
+        padding: 20px;
+        margin: 20px;
+    }
+
+    /* إعدادات مدخل النصوص */
+    input, select {
+        width: 100%;
+        padding: 15px 40px 15px 20px; /* إضافة مساحة للزر داخل المربع */
+        font-size: 16px;
+        border: 2px solid #dcdcdc;
+        border-radius: 30px;
+        outline: none;
+        margin: 5px;
+        color: black;
+        background-color: #ffffff;
+        transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    /* ضبط القيم الأخرى */
+    input, select {
+        font-size: 18px;
+        border-radius: 12px;
+        border: 1px solid #ccc;
+        width: 80%;
+        max-width: 400px;
+    }
+
+    input:focus, select:focus {
+        outline: none;
+        border-color: #4CAF50;
+        box-shadow: 0 0 10px rgba(0, 200, 0, 0.3);
+    }
+
+    /* إعدادات الأزرار */
+    button {
+        margin: 10px 0;
+        padding: 12px;
+        font-size: 18px;
+        border-radius: 12px;
+        border: none;
+        width: 80%;
+        max-width: 400px;
+        box-sizing: border-box;
+        color: white;
+        background-color: #4CAF50;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+    }
+
+    button:hover {
+        background-color: #45a049;
+        transform: scale(1.05);
+    }
+
+/* حاوية مربع النص */
+div {
+    position: relative;
+    display: inline-block;
+}
+
+/* زر مسح النص */
+#clearButton {
+    position: absolute;
+    right: 40px; /* تحديد موقع الزر إلى اليمين داخل مربع النص */
+    top: 50%; /* وضعه في المنتصف عمودياً */
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: black;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    margin-top: -25px; /* رفع الزر قليلاً */
+    margin-right: 335px; /* تحريك الزر إلى اليمين قليلاً */
+
+}
+
+/* زر الميكروفون */
+#startStopBtn {
+    position: absolute;
+    right: 5px; /* تحديد موقع الزر إلى اليمين داخل مربع النص */
+    top: 50%; /* وضعه في المنتصف عمودياً */
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: black;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    margin-top: -25px; /* رفع الزر قليلاً */
+    margin-right: 335px; /* تحريك الزر إلى اليمين قليلاً */
+
+}
+
+    /* إعدادات مربع النص الخاص بالبحث */
+    #searchQuery {
+        width: 650px; /* عرض مربع النص */
+        height: 50px;
+        padding: 10px;
+        font-size: 20px;
+        border-radius: 18px;
+        margin-bottom: 20px;
+        padding-right: 5px; /* توفير مساحة للأزرار داخل مربع النص */
+        margin-top: -10px;
+        transition: box-shadow 0.3s ease;
+    }
+
+    #searchQuery:focus {
+        outline: none;
+        border-color: #4CAF50;
+        box-shadow: 0 0 10px rgba(0, 200, 0, 0.3);
+    }
+
+    .input-search::placeholder {
+        color: #999;
+    }
+
+    /* إعدادات تذييل الصفحة */
+    .footer {
+        background-color: white;
+        color: #333;
+        text-align: center;
+        padding: 10px 0;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+          
+/* إعدادات الأزرار المخصصة (الفئات) */
+/* تنسيق النصوص */
+.category-button {
+    display: inline-block; /* لتظهر النصوص بشكل مرن مثل الأزرار */
+    background-color: #007bff; /* لون الخلفية الأزرق */
+    color: white; /* لون النص الأبيض */
+    padding: 15px 20px; /* حشوة النصوص */
+    font-size: 16px; /* حجم الخط */
+    font-weight: bold; /* جعل النص عريضًا */
+    cursor: pointer; /* تغيير المؤشر إلى اليد عند التمرير */
+    border-radius: 5px; /* جعل الزوايا مدورة */
+    text-decoration: none; /* إزالة التسطير (في حال استخدمت روابط <a>) */
+    transition: background-color 0.3s ease; /* إضافة تأثير التبديل في اللون */
+    width: 100%; /* جعل النص يأخذ عرض الخلية بالكامل */
+    text-align: center; /* محاذاة النص داخل العنصر */
+    line-height: 1.5; /* ضبط ارتفاع السطر لتحسين محاذاة النص */
+    box-sizing: border-box; /* التأكد من أن padding و border لا تؤثر على حجم العنصر */
+    overflow: hidden; /* إخفاء النص الزائد إذا تجاوز حجم العنصر */
+    text-overflow: ellipsis; /* إضافة نقاط للإشارة إلى النص المقطوع */
+    white-space: nowrap; /* منع النص من الالتفاف إلى سطر جديد */
+    max-width: 100%; /* التأكد من أن النص لا يتجاوز العرض المسموح به */
+}
+
+/* التأثير عند التمرير على النصوص */
+.category-button:hover {
+    background-color: #0056b3; /* تغيير اللون إلى الأزرق الداكن عند التمرير */
+}
+
+/* تحريك الجدول قليلاً إلى اليسار باستخدام مسافة بادئة */
+#categoryButtons table {
+    padding-left: 50px; /* إضافة مسافة بادئة لتحريك الجدول */
+    width: auto; /* الحفاظ على العرض التلقائي للجدول */
+}
+/* توسيط الجدول داخل الصفحة أو الحاوية */
+#categoryButtons table {
+    margin: 0 auto; /* توسيط الجدول */
+    width: auto; /* الحفاظ على العرض التلقائي */
+    padding-left: 50px; /* إضافة مسافة بادئة لتحريك الجدول */
+}
+
+/* تنسيق الجدول على الشاشات الصغيرة */
+@media (max-width: 768px) {
+    #categoryButtons table {
+        width: 100%; /* جعل الجدول يأخذ عرض الشاشة بالكامل */
+    }
+    #categoryButtons td {
+        padding: 8px; /* تقليل الحشوة قليلاً على الشاشات الصغيرة */
+    }
+    .category-button {
+        font-size: 14px; /* تقليل حجم الخط للنصوص على الشاشات الصغيرة */
+        padding: 8px 16px; /* تقليل الحشوة للنصوص */
+    }
+}
+          
+          /* إعدادات اختيار محركات البحث */
+    #searchEnginesDropdown {
+        padding: 10px;
+        font-size: 20px;
+        border: 2px solid #28A745;
+        border-radius: 20px;
+        background-color: #ffffff;
+        color: #5f6368;
+        outline: none;
+        cursor: pointer;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* إعدادات الأزرار الإضافية */
+    .translate-button, .search-button {
+        margin: 5px;
+        width: 150px;
+        height: 50px;
+        font-size: 16px;
+        border-radius: 25px;
+        border: none;
+        box-sizing: border-box;
+        color: white;
+        background-color: #1E90FF;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .translate-button:hover, .search-button:hover {
+        background-color: white;
+        color: #1E90FF;
+    }
+
+    .search-button img {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+
+    /* استجابة للعرض على الشاشات الصغيرة */
+    @media (max-width: 600px) {
+        .show-text {
+            font-size: 6vw;
+        }
+
+        #searchQuery {
+            font-size: 18px;
+        }
+
+        .category-button {
+            font-size: 14px;
+            padding: 12px 25px;
+        }
+
+        .search-button {
+            padding: 20px 15px;
+        }
+
+        #categoryButtons {
+            grid-template-columns: repeat(3, 1fr); /* تقليص عدد الأعمدة على الشاشات الصغيرة */
+        }
+    }
+
+    @media (max-width: 400px) {
+        .show-text {
+            font-size: 2.5em;
+        }
+
+        #searchQuery {
+            font-size: 16px;
+        }
+
+        .category-button {
+            font-size: 12px;
+            padding: 8px 15px;
+        }
+
+        .search-button {
+            padding: 15px 10px;
+        }
+    }
+
+
+
+    .separator img:hover {
+        transform: scale(1.1); /* تكبير الصورة عند التمرير */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* إضافة ظل عند التمرير */
+    }
